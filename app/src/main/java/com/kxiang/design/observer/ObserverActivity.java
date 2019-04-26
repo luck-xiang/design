@@ -20,24 +20,21 @@ public class ObserverActivity extends Activity implements View.OnClickListener {
      */
     private void add() {
 
-        FansObserver observer = new FansObserver("粉丝1");
-        FansObserver observer1 = new FansObserver("粉丝2");
-        FansObserver observer2 = new FansObserver("粉丝3");
-        BaseObserver observer3 = new BaseObserver() {
-            @Override
-            public void receiveMessage(String message) {
+        //创建观察者（创建追番的人）
+        FansBilibiliAnimeObserver observer = new FansBilibiliAnimeObserver("追番者1");
+        FansBilibiliAnimeObserver observer1 = new FansBilibiliAnimeObserver("追番者2");
+        FansBilibiliAnimeObserver observer2 = new FansBilibiliAnimeObserver("追番者3");
 
-                Log.e("BaseObserver", "粉丝4");
-            }
-        };
-
-        StartObservable.getStartObservable().addObserver(observer);
-        StartObservable.getStartObservable().addObserver(observer1);
-        StartObservable.getStartObservable().addObserver(observer2);
-        StartObservable.getStartObservable().addObserver(observer3);
+        //订阅（点击追番）
+        BilibiliAnimeObservable.getStartObservable().addObserver(observer);
+        BilibiliAnimeObservable.getStartObservable().addObserver(observer1);
+        BilibiliAnimeObservable.getStartObservable().addObserver(observer2);
+        //你等等的番剧创作中，你在忙成的等待中………………
+        //………………
+        //更新啦，赶快去看吧……
+        BilibiliAnimeObservable.getStartObservable().publishTheNews("五等分的新娘");
 
     }
-
 
     @Override
     public void onClick(View v) {
@@ -47,7 +44,7 @@ public class ObserverActivity extends Activity implements View.OnClickListener {
                 add();
                 break;
             case R.id.btn_2:
-                StartObservable.getStartObservable().publishTheNews("今天多云");
+//                BilibiliAnimeObservable.getStartObservable().publishTheNews("今天多云");
                 break;
 
 

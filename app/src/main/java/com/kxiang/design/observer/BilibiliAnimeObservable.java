@@ -7,26 +7,27 @@ import java.util.List;
  * 项目名称:design
  * 创建人:kexiang
  * 创建时间:2016/11/15 12:44
+ * 被观察者创建（创建你喜欢的番剧）
  */
 
-public class StartObservable implements BaseObservable {
+public class BilibiliAnimeObservable implements BaseObservable {
 
 
     private List<BaseObserver> observerList;
 
     //单利模式
-    private static StartObservable startObservable;
+    private static BilibiliAnimeObservable startObservable;
 
-    private StartObservable() {
+    private BilibiliAnimeObservable() {
         observerList = new ArrayList<>();
     }
 
-    public static StartObservable getStartObservable() {
+    public static BilibiliAnimeObservable getStartObservable() {
 
         if (startObservable == null) {
-            synchronized (StartObservable.class) {
+            synchronized (BilibiliAnimeObservable.class) {
                 if (startObservable == null) {
-                    startObservable = new StartObservable();
+                    startObservable = new BilibiliAnimeObservable();
                 }
             }
         }

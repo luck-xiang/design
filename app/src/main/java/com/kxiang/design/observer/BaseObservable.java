@@ -16,7 +16,7 @@ public interface BaseObservable {
      */
     void addObserver(BaseObserver observer);
     /**
-     * 添加观察者
+     * 移除观察者
      *
      * @param observer
      */
