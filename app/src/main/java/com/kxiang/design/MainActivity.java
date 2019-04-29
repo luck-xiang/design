@@ -15,7 +15,9 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.kxiang.design.factory.FactoryActivity;
 import com.kxiang.design.observer.ObserverActivity;
+import com.kxiang.design.proxy.ProxyActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,6 +79,8 @@ public class MainActivity extends BaseActivity {
         List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
 
 
+        addItem(data, "工厂模式", FactoryActivity.class);
+        addItem(data, "代理模式", ProxyActivity.class);
         addItem(data, "观察者模式和单利模式", ObserverActivity.class);
 
 
@@ -134,8 +138,7 @@ public class MainActivity extends BaseActivity {
                     tv_internet_show_id.setVisibility(View.GONE);
                 }
             });
-        }
-        else {
+        } else {
             handler.post(new Runnable() {
                 @Override
                 public void run() {

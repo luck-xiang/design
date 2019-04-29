@@ -47,7 +47,6 @@ public class ObserverActivity extends Activity implements View.OnClickListener {
 //                BilibiliAnimeObservable.getStartObservable().publishTheNews("今天多云");
                 break;
 
-
         }
 
     }
